@@ -1,0 +1,140 @@
+<!-- Create a full CRUD application of your choice using an API or JSON Server.
+Use JQuery/AJAX to interact with the API. 
+Use a form to post new entities.
+Build a way for users to update or delete entities.
+Include a way to get entities from the API.
+Use Bootstrap and CSS to style your project. -->
+
+<!-- recipe book add, edit and delete. search for recipes. ingredients, instructions, images  -->
+<!-- using mockAPI : https://64ee46831f872182714277cf.mockapi.io/Recipes -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="container">
+    <div class="container col-md-6">
+        <img
+        src="DishImages/logo.png"
+        class="img-fluid"
+        style="height:300px; width: 1000px"
+        />
+        </div>
+<!-- form to submit recipe -->
+     <div class="container mt-5 mb-5" id="recipeForm">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="DishImages/Left2.png" class="img-fluid">
+        </div>
+        <div class="col-md-4">
+        <form id="submitForm">
+        <div class="row justify-content-md-center">
+        <div class="mb-1">
+            <h3 class="display-5">Share Your Dish!</h3>
+        </div>
+        </div>
+        <div class="row justify-content-md-center">
+        <div class="col mb-1">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username" placeholder="GourmetGuru123" autocomplete="off">
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+        <div class="col mb-1">
+          <label for="dishName" class="form-label">Name your Dish!</label>
+          <input type="text" class="form-control" id="dishName" placeholder="Something yummy!" autocomplete="off">
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col mb-1">
+                <label for="ingredients" class="form-label">Ingredients</label>
+                <textarea class="form-control" id="ingredients" rows="3" placeholder="What do we need?" autocomplete="off"></textarea>
+              <!-- textarea allows room to enter list of ingredients,full recipe -->
+            </div>
+        </div>        
+        <div class="row justify-content-md-center">
+        <div class="col mb-1">
+            <label for="dishRecipe" class="form-label">Recipe</label>
+            <textarea class="form-control" id="dishRecipe" rows="5" placeholder="Let's get cooking!" autocomplete="off"></textarea>
+          </div>
+        </div>
+        <div class="row justify-content-md-center">
+        <div class="col mb-1">
+            <label for="dishPhoto" class="form-label">Photo URL</label>
+            <input type="text" class="form-control" id="dishPhoto" autocomplete="off">
+            <!-- <small class="form-text text-muted">Upload a photo (JPEG, PNG, GIF)</small> placing URL image as i don't have backend server for adding own photo and creating URL -->
+          </div>
+        </div>
+        <div class="row justify-content-md-center">
+        </div>
+        <div class="row justify-content-md-center">
+            <button type="submit" class="btn btn-outline-success mb-5 col-md-3">Submit</button>
+        </div>
+        </form>
+        </div>
+            <div class="col-md-4">
+                <img src="DishImages/Right3.png" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+<!--form to use keywords to search for recipes if i decide to do that :) -->
+<!-- <form class="d-flex">
+    <input class="form-control me-2" type="search" placeholder="Find a Dish" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form> -->
+    
+    <!-- modal for editing recipe cards -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Edit Recipe</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editForm">
+                    <div class="mb-3">
+                        <label for="editDishName" class="form-label">Dish Name</label>
+                        <input type="text" class="form-control" id="editDishName" autocomplete="off">
+                    </div>
+                    <div class="mb-3">
+                        <label for="editIngredients" class="form-label">Ingredients</label>
+                        <textarea class="form-control" id="editIngredients" rows="3" autocomplete="off"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editDishRecipe" class="form-label">Recipe</label>
+                        <textarea class="form-control" id="editDishRecipe" rows="5" autocomplete="off"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editDishPhoto" class="form-label">Photo URL</label>
+                        <input type="text" class="form-control" id="editDishPhoto" autocomplete="off">
+                    </div>
+                    <div class="mb-3">
+                        <label for="editUsername" class="form-label">Shared By</label>
+                        <input type="text" class="form-control" id="editUsername" autocomplete="off"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-outline-success">Save Changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+ <div class="container" id="newlyShared">       
+        <h4 class="text-center display-3 mb-4">Newly Shared Recipes</h4>
+
+        <div id="recipeCardsContainer" class="row justify-content-md-center"></div>
+</div>
+
+<script src="node_modules/jquery/dist/jquery.js" ></script> 
+<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="project.js"></script>
+</body>
+</html>

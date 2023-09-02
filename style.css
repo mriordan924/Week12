@@ -1,0 +1,60 @@
+body {
+    background-color:rgba(244, 231, 215, 0.61);
+    background-image: url(DishImages/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    background-color: rgba(244, 231, 215, 0.61);
+    padding: 20px;
+}
+
+#recipeForm {
+    background-color: rgba(244, 231, 215, 0.61);
+    padding: 10px;
+    margin-bottom: 1px;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 2%;
+}
+/* style recipe cards */
+.recipe-card {
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 5%;
+    padding: 20px;
+    margin: 20px;
+    background-color: rgb(249, 249, 249);
+}
+
+.recipe-card .card-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.recipe-card .card-text {
+    font-size: 14px;
+}
+
+.recipe-card img.card-img-top {
+    height: 250px; 
+    width: 100%;  
+    
+}
+
+#newlyShared {
+    background-color: rgba(244, 231, 215, 0.61);
+    padding: 10px;
+    margin-bottom: 1px;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 2%;
+}
+
+/* read more buttons */
+.small-button {
+    font-size: 10px; 
+    padding: 2px 6px; 
+    margin-left: 6px;
+}
+
+
